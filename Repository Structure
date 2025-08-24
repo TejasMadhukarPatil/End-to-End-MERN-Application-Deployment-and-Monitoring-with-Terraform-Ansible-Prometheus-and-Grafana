@@ -1,0 +1,27 @@
+TravelMemory-Deployment/
+├── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── provider.tf
+├── ansible/
+│   ├── inventory.ini
+│   ├── webserver.yml
+│   ├── dbserver.yml
+│   ├── hardening.yml
+│   └── roles/
+│       ├── nodejs/
+│       ├── mongodb/
+│       ├── prometheus/
+│       └── grafana/
+├── monitoring/
+│   ├── prometheus.yml
+│   ├── grafana_dashboards/
+│   │   ├── backend_metrics.json
+│   │   ├── mongodb_metrics.json
+│   │   └── frontend_metrics.json
+│   └── alert_rules.yml
+├── docs/
+│   ├── README.md
+│   └── TravelMemory_Deployment_Report.pdf
+└── .gitignore
