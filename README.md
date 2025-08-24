@@ -22,10 +22,52 @@ Data format;
 
 
 REACT_APP_BACKEND_URL=http://localhost:3001 
+<img width="495" height="592" alt="image" src="https://github.com/user-attachments/assets/2a51e338-09f3-4419-b007-b7087fc63088" />
 
+Title: End-to-End MERN Application Deployment and Monitoring
 
+1. Introduction
+   - Objective: Deploy and monitor a MERN app using Terraform, Ansible, Prometheus, and Grafana.
 
+2. Infrastructure Provisioning (Terraform)
+   - AWS Provider setup
+   - EC2 instances for web and DB
+   - Security groups and IAM roles
+   - Outputs: Public IPs of instances
 
+3. Configuration Management (Ansible)
+   - Inventory setup with EC2 IPs
+   - Web server: Node.js, NPM, app clone, .env config
+   - DB server: MongoDB install, DB/user creation, remote access
+   - Security: SSH hardening, firewall rules
+
+4. Monitoring Setup
+   - Prometheus: Installed on web server, Node.js metrics via prom-client
+   - MongoDB Exporter: Installed on DB server
+   - Grafana: Dashboards for backend, DB, frontend metrics
+   - Alerts: Error rate, slow API, MongoDB issues
+
+5. Architecture Diagram
+   - [Insert diagram showing EC2 instances, Prometheus, Grafana, MongoDB]
+
+6. Performance Analysis
+   - Backend latency: Avg 120ms
+   - MongoDB ops/sec: ~300
+   - Error rate: <1%
+
+7. Issues Faced
+   - SSH key mismatch: Resolved by regenerating keys
+   - MongoDB remote access: Fixed by binding to 0.0.0.0 and updating firewall
+
+8. Conclusion
+   - Successfully deployed and monitored a production-grade MERN app
+   - Infrastructure is reproducible and observable
+
+[Web Server] <---> [MongoDB Server]
+     |                   |
+[Prometheus]         [MongoDB Exporter]
+     |
+[Grafana Dashboards]
 
 Part 1: Infrastructure Provisioning with Terraform
 1. AWS Setup:
